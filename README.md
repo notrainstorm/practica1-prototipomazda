@@ -89,4 +89,4 @@ No se ha utilizado ninguna biblioteca externa.
 
 ## Documentación
 
-La documentación técnica completa (requisitos, arquitectura, justificación del diseño, pruebas, recursos y uso de IA) se incluye en `Documentacion.pdf`.
+La documentación técnica completa (requisitos, arquitectura, justificación del diseño, pruebas, recursos y uso de IA) se incluye en `Documentación Práctica 1 Interfaces.pdf`.
