@@ -1,105 +1,100 @@
 # Mazda · Prototipo de aplicación de escritorio (WPF)
 
-Hola 👋 Este es mi trabajo de la **Práctica 1** de *Interfaces de Usuario*
-(Grado en Ingeniería Informática en Tecnologías de la Información, UMH).
+Práctica 1 de *Interfaces de Usuario* · Grado en Ingeniería Informática en Tecnologías de la Información · Universidad Miguel Hernández de Elche (UMH)
 
-La idea era diseñar el prototipo de una aplicación de escritorio para una
-tienda de coches, siguiendo unos requisitos de cliente, y hacerlo con
-**Microsoft Blend / WPF**. Yo lo planteé como la app de una tienda de Mazda,
-con el MX-5 como modelo destacado.
-
-> ⚠️ Es un **prototipo**: no hay base de datos ni servidor. Lo importante aquí
-> era la interfaz, la usabilidad y la navegación.
+Autora: María Barberá Zaragoza · Noviembre de 2026
 
 ![Portada de la aplicación](img/captura.png)
 
-## Qué hace la aplicación
+## Descripción
 
-- **Inicio**: portada con el modelo destacado (MX-5), su precio y un botón
-  para descubrirlo.
-- **Login / Sign up**: formulario con pestañas animadas. La contraseña se
-  oculta, hay un texto de ayuda (placeholder) y avisos de error si falta algo
-  o si los datos no son correctos.
-- **Galería**: seis modelos de la gama en tarjetas (MX-5, CX-5, Mazda6,
-  Mazda3, CX-30 y CX-60).
-- **Ficha del MX-5**: descripción, potencia, 0-100 km/h, tracción y un botón
-  de "Solicitar prueba".
-- **Elementos comunes** en todas las pantallas: la barra superior con el
-  **logotipo** y el **menú lateral** desplegable (Inicio, Login, Galería, Salir).
+Prototipo de una aplicación de escritorio para una tienda de venta de coches, desarrollado con Microsoft Blend y WPF a partir de los requisitos de un cliente. La aplicación simula la web de venta de una tienda Mazda, con el MX-5 como modelo destacado.
 
-## Cómo probarlo
+El enunciado plantea como cliente a Polestar. Se ha trabajado con Mazda por preferencia personal de la autora por el modelo MX-5.
 
-1. Necesitas Windows y **Visual Studio 2022** (o Blend) con la carga de trabajo
-   de *desarrollo de escritorio de .NET*.
-2. Clona el repositorio:
+Se trata de un prototipo: no existe base de datos ni servidor, y todo el comportamiento se simula en el cliente. El objetivo es evaluar la interfaz, la usabilidad y la navegación, no la lógica de negocio.
+
+## Funcionalidades
+
+- **Inicio.** Portada con el MX-5, su precio de partida (29.995 €) y un botón que lleva a su ficha.
+- **Login / Sign up.** Formulario con pestañas animadas. La contraseña se oculta y dispone de un texto de ayuda. Se informa de los errores por campos vacíos y por credenciales incorrectas.
+- **Galería.** Seis modelos de la gama en tarjetas: MX-5, CX-5, Mazda6, Mazda3, CX-30 y CX-60.
+- **Ficha del MX-5.** Descripción, potencia, aceleración de 0 a 100 km/h, tracción y botón para solicitar una prueba.
+- **Elementos comunes.** Barra superior con el logotipo y menú lateral desplegable (Inicio, Login, Galería y Salir), presentes en todas las pantallas.
+
+## Requisitos y ejecución
+
+- Windows con Visual Studio 2022 (o Microsoft Blend) y la carga de trabajo de desarrollo de escritorio de .NET.
+
+Pasos:
+
+1. Clonar el repositorio:
    ```bash
-   git clone https://github.com/[TU_USUARIO]/practica1-prototipo-wpf-mazda.git
+   git clone https://github.com/notrainstorm/practica1-prototipomazda.git
    ```
-3. Abre el archivo `.csproj` / la solución y pulsa **F5**.
+2. Abrir el archivo de proyecto (`.csproj`) o la solución.
+3. Ejecutar con **F5**.
 
-**Usuario de prueba:** `Alumno` · **Contraseña:** `1234`
-(está escrito a propósito en el código porque es un prototipo; en una app real
-esto iría contra un servidor, nunca en el cliente).
+Credenciales de prueba: usuario `Alumno`, contraseña `1234`. Están definidas en el código por tratarse de un prototipo; en una aplicación real la validación se realizaría contra un servidor.
 
-## Cómo está organizado
+## Estructura del proyecto
 
 ```
-├── MainWindow.xaml        # Toda la interfaz (pantallas y menú)
-├── MainWindow.xaml.cs     # Lógica: navegación, login y animaciones
-├── img/                   # Imágenes usadas en la app
-└── capturas/              # Pantallazos para este README
+├── MainWindow.xaml        # Interfaz: pantallas, barra superior, menú, estilos y estados visuales
+├── MainWindow.xaml.cs     # Lógica: navegación, validación del login y animaciones del menú
+└── img/                   # Imágenes utilizadas por la aplicación y por este README
 ```
 
-Todas las pantallas viven en una sola ventana (`Inicio`, `Login`, `Galería`,
-`MX5`) y se muestran u ocultan con `Visibility`. Así la barra superior y el
-menú lateral son siempre los mismos y no se repiten.
+La aplicación es una única ventana de 1280 x 720 con dos filas: una de 80 píxeles para la barra superior y otra para las pantallas. Inicio, Login, Galería y la ficha del MX-5 son contenedores dentro de esa ventana, y solo uno es visible a la vez; el código modifica su propiedad `Visibility`. De este modo, la barra y el menú no se repiten y mantienen siempre la misma posición.
 
-## Decisiones de diseño (resumen)
+## Decisiones de diseño
 
-- **Consistencia**: misma barra, mismos colores (azul oscuro `#041428` y
-  blanco) y mismos botones en todas las pantallas.
-- **Jerarquía visual**: títulos grandes en negrita, datos secundarios en gris.
-- **Prevención y gestión de errores**: se avisa si dejas campos vacíos y si el
-  usuario o la contraseña no son correctos, y el cursor vuelve al campo de usuario.
-- **Feedback**: mensajes al iniciar sesión, al solicitar una prueba y al
-  recuperar la contraseña; cursor de mano en lo que se puede pulsar.
-- **Animaciones con moderación**: solo dos. El menú lateral se desliza (0,25 s)
-  y la línea de las pestañas Login/Sign up se desplaza (0,25 s). Nada más,
-  para no distraer.
+- **Consistencia.** Misma paleta (azul oscuro `#041428`, blanco y grises) y mismos botones en todas las pantallas.
+- **Jerarquía visual.** Títulos y precios en negrita y de mayor tamaño; descripciones en gris y menor tamaño.
+- **Prevención y gestión de errores.** El login distingue entre campos vacíos y credenciales incorrectas, y devuelve el foco al campo de usuario.
+- **Feedback.** Mensajes al iniciar sesión, solicitar una prueba o recuperar la contraseña; cursor de mano en los elementos pulsables; la pestaña activa del login cambia de color y de grosor.
+- **Accesibilidad.** Contraste alto del texto blanco sobre azul oscuro y tamaño de letra mínimo de 11 puntos. Queda pendiente añadir propiedades para lectores de pantalla.
+- **Animaciones.** Solo dos, de corta duración: el deslizamiento del menú lateral (0,25 s al abrir y 0,20 s al cerrar) y el desplazamiento de la línea de pestañas del login (0,25 s).
 
-*(La explicación completa está en la documentación técnica entregada.)*
+La justificación completa se encuentra en la documentación técnica entregada junto con el proyecto.
 
 ## Pruebas y mejoras
 
-[Aquí cuenta qué probaste y qué arreglaste. Por ejemplo: probé a entrar con
-campos vacíos, con contraseña incorrecta, abrí y cerré el menú varias veces...
-y qué cambiaste después.]
+Se comprobaron manualmente los siguientes casos, todos con resultado correcto: login con campos vacíos, con datos incorrectos y con datos correctos; ocultación de la contraseña y desaparición de la etiqueta al escribir; cambio entre las pestañas Login y Sign up; apertura y cierre repetido del menú; navegación por el menú y acceso a la ficha del MX-5; solicitud de prueba y salida de la aplicación.
+
+Problemas encontrados durante el desarrollo y su resolución:
+
+- **Texto de ayuda en la contraseña.** El control `PasswordBox` no dispone de propiedad `Text`. Se resolvió superponiendo un `TextBlock` con `IsHitTestVisible="False"` y ocultándolo desde el evento `PasswordChanged` cuando el campo tiene contenido.
+- **Animación del menú lateral.** Los estados grabados en Blend producían tirones y el panel no aparecía al animarlo solo por código. Se ajustaron el XAML de `MenuLateral` y los métodos `AbrirLateral` y `CerrarLateral`.
+- **Tamaño de las imágenes.** Varias fotos tenían proporciones distintas y se veían recortadas o deformadas. Se reescalaron a un tamaño y una proporción uniformes.
+
+Limitaciones conocidas, pendientes como mejora:
+
+- El campo de usuario muestra el texto «Email», pero el login espera «Alumno». Además, ese texto es contenido real del campo y no una etiqueta que desaparece.
+- Las tarjetas de la galería distintas del MX-5 muestran el cursor de mano pero no ejecutan ninguna acción.
+- La pestaña Sign up solo cambia el aspecto del formulario; no realiza ningún registro.
+- Faltan propiedades de accesibilidad para lectores de pantalla.
 
 ## Recursos utilizados
 
-| Recurso | Para qué | Procedencia / licencia |
+| Recurso | Uso | Procedencia y licencia |
 |---|---|---|
-| Imágenes de los modelos (`img/`) | Galería e inicio | [web de donde las sacaste] · Son de Mazda, uso solo educativo |
-| Logotipos | Barra y login | [procedencia] |
-| Tipografía | Interfaz | Por defecto de WPF (Segoe UI) |
-| Plantilla de botón `BotónLateral` | Botones sin efecto hover | Generada con Blend a partir del estilo estándar de WPF |
+| Imágenes de modelos y portada (`img/`) | Inicio, galería y ficha | Web oficial de Mazda; [Top Gear](https://www.topgear.com/long-term-car-reviews/mazda/mx-5/20-184-homura-2dr/report-1); [PistonHeads](https://www.pistonheads.com/news/ph-driven/mazda-mx-5-vs-toyota-gr-yaris-vs-ariel-nomad/49756). Propiedad de sus autores y de Mazda; uso exclusivamente educativo |
+| Logotipos y fondo del login | Barra superior y login | Web oficial de Mazda. Uso exclusivamente educativo |
+| Tipografía | Toda la interfaz | Por defecto de WPF (Segoe UI) |
+| Estilo `BotónLateral` | Botones sin efecto al pasar el ratón | Generado con Blend a partir de la plantilla estándar de WPF y modificado manualmente |
+| Paleta de colores | Diseño de la interfaz | Generada con IA (ver apartado siguiente) |
+
+No se ha utilizado ninguna biblioteca externa.
 
 ## Uso de inteligencia artificial
 
-Como pide el enunciado, lo dejo todo documentado:
+- **Herramienta y fecha.** Claude (Anthropic), noviembre de 2026.
+- **Objetivo.** Ayuda para subir el proyecto a GitHub, redactar este README, estructurar y redactar la documentación técnica, generar la paleta de colores y resolver tres problemas de la interfaz: el texto de ayuda de la contraseña, la animación del menú lateral y el escalado de las imágenes.
+- **Prompts y respuestas.** [Enlace público a la conversación o carpeta `ia/` del repositorio].
+- **Revisión.** Las soluciones propuestas se comprobaron ejecutando la aplicación, y el texto de la documentación se contrastó con el comportamiento real del prototipo.
+- **Contribución propia.** El diseño de la interfaz, el código XAML y C#, el boceto inicial y las pruebas son trabajo propio. La IA se utilizó como apoyo puntual y su aportación se limita a lo indicado arriba.
 
-- **Herramienta y fecha**: [Claude (Anthropic), noviembre de 2026]
-- **Para qué la usé**: [por ejemplo: ayuda para subir el proyecto a GitHub
-  y redactar este README]
-- **Prompts y respuestas**: [enlace a la conversación compartida o carpeta `ia/`
-  con los textos]
-- **Qué revisé yo**: [qué comprobaste, qué aceptaste, modificaste o descartaste]
-- **Mi aportación**: [lo que hiciste tú: diseño, XAML, lógica, pruebas...]
+## Documentación
 
-## Enlaces
-
-- Repositorio: [enlace]
-- Prototipo / capturas: [enlace]
-
----
-Hecho por [Tu nombre] · UMH · [Curso 2026/27]
+La documentación técnica completa (requisitos, arquitectura, justificación del diseño, pruebas, recursos y uso de IA) se incluye en [nombre del archivo, por ejemplo `Documentacion.pdf`].
