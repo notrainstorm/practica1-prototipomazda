@@ -83,10 +83,10 @@ Limitaciones conocidas, pendientes como mejora:
 | Logotipos y fondo del login | Barra superior y login | Web oficial de Mazda. Uso exclusivamente educativo |
 | Tipografía | Toda la interfaz | Por defecto de WPF (Segoe UI) |
 | Estilo `BotónLateral` | Botones sin efecto al pasar el ratón | Generado con Blend a partir de la plantilla estándar de WPF y modificado manualmente |
-| Paleta de colores | Diseño de la interfaz | Generada con IA (ver apartado siguiente) |
+| Paleta de colores | Diseño de la interfaz |
 
 No se ha utilizado ninguna biblioteca externa.
 
 ## Documentación
 
-La documentación técnica completa (requisitos, arquitectura, justificación del diseño, pruebas, recursos y uso de IA) se incluye en [nombre del archivo, por ejemplo `Documentacion.pdf`].
+La documentación técnica completa (requisitos, arquitectura, justificación del diseño, pruebas, recursos y uso de IA) se incluye en `Documentacion.pdf`.
