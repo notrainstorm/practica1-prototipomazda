@@ -87,14 +87,6 @@ Limitaciones conocidas, pendientes como mejora:
 
 No se ha utilizado ninguna biblioteca externa.
 
-## Uso de inteligencia artificial
-
-- **Herramienta y fecha.** Claude (Anthropic), noviembre de 2026.
-- **Objetivo.** Ayuda para subir el proyecto a GitHub, redactar este README, estructurar y redactar la documentación técnica, generar la paleta de colores y resolver tres problemas de la interfaz: el texto de ayuda de la contraseña, la animación del menú lateral y el escalado de las imágenes.
-- **Prompts y respuestas.** [Enlace público a la conversación o carpeta `ia/` del repositorio].
-- **Revisión.** Las soluciones propuestas se comprobaron ejecutando la aplicación, y el texto de la documentación se contrastó con el comportamiento real del prototipo.
-- **Contribución propia.** El diseño de la interfaz, el código XAML y C#, el boceto inicial y las pruebas son trabajo propio. La IA se utilizó como apoyo puntual y su aportación se limita a lo indicado arriba.
-
 ## Documentación
 
 La documentación técnica completa (requisitos, arquitectura, justificación del diseño, pruebas, recursos y uso de IA) se incluye en [nombre del archivo, por ejemplo `Documentacion.pdf`].
