@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="img\cx-30.jfif" />
+    <None Remove="img\cx-5.jpg" />
+    <None Remove="img\cx-60.jfif" />
+    <None Remove="img\fondo_login.jpeg" />
+    <None Remove="img\fondo_login.png" />
+    <None Remove="img\fondo_login2.png" />
+    <None Remove="img\inicio.png" />
+    <None Remove="img\lente.jfif" />
+    <None Remove="img\llave.jpg" />
+    <None Remove="img\llaves.jpeg" />
+    <None Remove="img\logo_barra.png" />
+    <None Remove="img\logo_blanco.png" />
+    <None Remove="img\logo_letra.png" />
+    <None Remove="img\logo_login.png" />
+    <None Remove="img\mazda3.jfif" />
+    <None Remove="img\mazda6.jfif" />
+    <None Remove="img\mx-5.jfif" />
+    <None Remove="img\opprincipal.jpg" />
+    <None Remove="img\side.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="img\cx-30.jfif" />
+    <Resource Include="img\cx-5.jpg" />
+    <Resource Include="img\cx-60.jfif" />
+    <Resource Include="img\fondo_login.png" />
+    <Resource Include="img\fondo_login2.png" />
+    <Resource Include="img\inicio.png" />
+    <Resource Include="img\lente.jfif" />
+    <Resource Include="img\llave.jpg" />
+    <Resource Include="img\llaves.jpeg" />
+    <Resource Include="img\logo_blanco.png" />
+    <Resource Include="img\logo_letra.png" />
+    <Resource Include="img\logo_login.png" />
+    <Resource Include="img\mazda3.jfif" />
+    <Resource Include="img\mazda6.jfif" />
+    <Resource Include="img\mx-5.jfif" />
+  </ItemGroup>
+
+</Project>
