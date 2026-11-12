@@ -10,7 +10,8 @@ con el MX-5 como modelo destacado.
 
 > ⚠️ Es un **prototipo**: no hay base de datos ni servidor. Lo importante aquí
 > era la interfaz, la usabilidad y la navegación.
-![Portada de la aplicación](img/captura.png)
+
+[Portada de la aplicación](img/captura.png)
 
 ## Qué hace la aplicación
 
